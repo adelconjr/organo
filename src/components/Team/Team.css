@@ -1,0 +1,32 @@
+.team {
+    padding: 34px;
+}
+
+.team > h3 {
+    text-align: center;
+    font-weight: normal;
+    font-family: 'Prata', serif;
+}
+
+.team > h3::after {
+    content: ' ';
+    width: 32px;
+    height: 4px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+.team > h3.color1::after { background-color: #57C278; }
+.team > h3.color2::after { background-color: #82CFFA; }
+.team > h3.color3::after { background-color: #A6D157; }
+.team > h3.color4::after { background-color: #E06B69; }
+.team > h3.color5::after { background-color: #DB6EBF; }
+.team > h3.color6::after { background-color: #FFBA05; }
+.team > h3.color7::after { background-color: #FF8A29; }
+
+.team > .collaborators {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

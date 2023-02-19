@@ -10,7 +10,7 @@ export const SelectList = (props) => {
                 { 
                     props.items
                         .map( item => 
-                            <option value={item} key={item}>{ item }</option>
+                            <option value={item} key={`select-${item}`}>{ item }</option>
                         ) 
                 }
             </select>

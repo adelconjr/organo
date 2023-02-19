@@ -1,0 +1,46 @@
+.collaborator-card {
+    width: 260px;
+    display: inline-block;
+    background-color: transparent;
+    margin: 0 auto;
+}
+
+.collaborator-card .header {
+    text-align: center;
+    height: 100px;
+    background-color: #DB6EBF;
+    border-radius: 10px 10px 0 0;
+    
+}
+
+.collaborator-card .header > img {
+    position: relative;
+    bottom: -50%;
+    width: 100px;
+    border-radius: 50%;
+}
+
+.collaborator-card .footer {
+    text-align: center;
+    padding: 50px 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    box-sizing: border-box;
+    background-color: #FFF;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+.collaborator-card .footer h4 {
+    margin-bottom: 0;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.collaborator-card .footer h5 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: normal;
+}
