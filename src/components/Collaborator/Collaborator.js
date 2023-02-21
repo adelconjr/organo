@@ -1,9 +1,13 @@
 import './Collaborator.css'
 
-const Collaborator = ({ name, image, position }) => {
+const Collaborator = ({ name, image, position, secondaryColor }) => {
+    const headerStyle = {
+        backgroundColor: secondaryColor ?? ''
+    }
+
     return (
         <div className="collaborator-card">
-            <div className="header">
+            <div className="header" style={headerStyle}>
                 <img alt={name} src={image} />
             </div>
             <div className="footer">

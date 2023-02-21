@@ -7,6 +7,7 @@ export const SelectList = (props) => {
         <div className="select-list">
             <label>{props.label}</label>
             <select placeholder="Teste" name={props.name} required={props.required} value={props.value} onChange={onChange}>
+                <option value=""></option>
                 { 
                     props.items
                         .map( item => 

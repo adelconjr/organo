@@ -27,6 +27,14 @@
 
 .team > .collaborators {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+}
+
+
+@media (max-width: 767px) {
+    .team {
+        padding: 25px;
+    }
 }

@@ -1,6 +1,7 @@
 import React, { useState, useContext } from 'react';
 
 import Banner from './components/Banner';
+import Footer from './components/Footer';
 import Form from './components/Form';
 import Team from './components/Team';
 
@@ -34,6 +35,8 @@ function App() {
             collaborators={collaborators.filter(c => c.time === t.name)} /> 
         )
       }
+      
+      <Footer />
       
     </div>
   );
