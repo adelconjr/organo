@@ -1,7 +1,9 @@
 .main-form {
     display: flex;
     justify-content: center;
-    margin: 80px 0;
+    margin: 80px 50px;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
 .main-form h2 {
@@ -10,11 +12,18 @@
 }
 
 .main-form > form {
-    max-width: 80%;
+    flex:  1;
+    max-width: 600px;
     border-radius: 20px;
     padding: 33px 96px;
     background-color: #F6F6F6;
     box-shadow: 7px 7px 15px rgba(0, 0, 0, .08);
+}
+
+@media (max-width: 998px) {
+    .main-form > form {
+        flex:  2 1 100%;
+    }
 }
 
 @media (max-width: 767px) {

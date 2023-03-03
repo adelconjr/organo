@@ -2,25 +2,25 @@
     width: 260px;
     display: inline-block;
     background-color: transparent;
-    margin: 0 20px;
+    margin: 20px;
+    position: relative;
 }
 
-.collaborator-card .header {
+.collaborator-card .card-header {
     text-align: center;
     height: 100px;
-    background-color: #DB6EBF;
     border-radius: 10px 10px 0 0;
     
 }
 
-.collaborator-card .header > img {
+.collaborator-card .card-header > img {
     position: relative;
     bottom: -50%;
     width: 100px;
     border-radius: 50%;
 }
 
-.collaborator-card .footer {
+.collaborator-card .card-footer {
     text-align: center;
     padding: 50px 0;
     display: flex;
@@ -32,18 +32,50 @@
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4);
 }
 
-.collaborator-card .footer h4 {
+.collaborator-card .card-footer h4 {
     margin-bottom: 0;
     font-size: 16px;
     font-weight: bold;
     margin-bottom: 5px;
 }
 
-.collaborator-card .footer h5 {
+.collaborator-card .card-footer h5 {
     margin: 0;
     font-size: 16px;
     font-weight: normal;
 }
+
+.btn-delete {
+    position: absolute;
+    right: -5px;
+    top: -5px;
+}
+
+.avatar-name {
+    position: relative;
+    bottom: -50%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: #F1F1F1;    
+}
+
+.avatar-name p {
+    font-weight: bold;
+    font-size: 40px;
+    text-align: center;
+}
+
+.favorite {
+    margin-top: 10px;
+}
+
 
 @media (max-width: 767px) {
     .collaborator-card {

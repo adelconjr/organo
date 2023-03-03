@@ -5,7 +5,7 @@ import Footer from './components/Footer';
 import Form from './components/Form';
 import Team from './components/Team';
 
-import { TeamsContext } from './contexts/TeamsContext';
+import { TeamsContext } from './contexts/TeamsProvider';
 
 function App() {
   const [collaborators, setCollaborators] = useState([]);
@@ -14,25 +14,67 @@ function App() {
     setCollaborators([...collaborators, collaborator ]);
   };
 
-  const teams = useContext(TeamsContext);
+  const [teams, setTeams] = useContext(TeamsContext);
+
+  const insertTeam = (team) => {
+    setTeams([...teams, team]);
+  }
+
+  const changeTeamColor = (color, id) => {
+      setTeams(
+        teams.map(t => {
+            if(t.id === id) {
+              t.color = color;
+            }
+
+            return t;
+        })
+      );
+  }
+
+  function deleteCollaborator(id) {
+    setCollaborators(
+      collaborators.map(collaborator => {
+        if(collaborator.id === id) {
+          return false
+        }
+
+        return collaborator;
+      })
+    );
+    
+  }
+
+  function favoriteCollaborator(id) {
+    setCollaborators(
+      collaborators.map(collaborator => {
+        if(collaborator.id === id) collaborator.favorite = !collaborator.favorite;
+
+        return collaborator;
+      })
+    );
+  }
 
   return (
     <div className="App">
       <Banner />
 
-      <TeamsContext.Provider value={teams.map(t => t.name)}>
-        <Form onSubmitCollaborator={onSubmitCollaborator} />
-      </TeamsContext.Provider>
+      <Form
+        insertTeam={insertTeam}
+        onSubmitCollaborator={onSubmitCollaborator} />
 
       { 
         teams.map(t =>
           <Team 
-            key={t.name}
+            key={t.id}
+            id={t.id}
             title={t.name} 
-            primaryColor={t.primaryColor} 
-            secondaryColor={t.secondaryColor} 
+            color={t.color} 
             titleClass={t.underlineClass}
-            collaborators={collaborators.filter(c => c.time === t.name)} /> 
+            collaborators={collaborators.filter(c => c.time === t.name)}
+            changeTeamColor={changeTeamColor}
+            deleteCollaborator={deleteCollaborator}
+            favoriteCollaborator={favoriteCollaborator} /> 
         )
       }
       
